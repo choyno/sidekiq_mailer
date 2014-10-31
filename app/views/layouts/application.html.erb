@@ -11,6 +11,13 @@
     <div class="container">
       <br/>
       <br/>
+
+      <% !flash.empty? && flash.each do |name, msg| %>
+        <div class=<%= flash_level(name) %>>
+          <%= msg %>
+        </div>
+      <% end %>
+
       <%= yield %>
     </div>
   </body>

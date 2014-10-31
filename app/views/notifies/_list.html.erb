@@ -1,42 +1,24 @@
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>NAME</th>
-      <th>EMAIL</th>
-      <th>MESSAGE</th>
-      <th>
-        <div class="text-center">
-          OPTION
-        </div>
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @notifies.each do |notify| %>
-      <tr>
-        <td><%=  notify.id %></td>
-        <td><%=  notify.name %></td>
-        <td><%=  notify.email %></td>
-        <td><%=  notify.message %></td>
-        <td >
-          <div class="text-center">
-            <%= link_to "#", class: "btn btn-small btn-info"  do %>
-              edit
-            <% end  %>
+<% @notifies.each do |notify| %>
+  <tr>
+    <td><%=  notify.id %></td>
+    <td><%=  notify.name %></td>
+    <td><%=  notify.email %></td>
+    <td><%=  notify.message %></td>
+    <td >
+      <div class="text-center">
+        <%= link_to "edit", edit_notify_path(notify.id), class: "btn btn-small btn-info"  %>
 
-            <%= link_to "#", class: "btn btn-small btn-success"  do %>
-              show
-            <% end  %>
+        <%= link_to "#", class: "btn btn-small btn-success"  do %>
+          show
+        <% end  %>
 
-            <%= link_to "#", class: "btn btn-small btn-danger"  do %>
-              delete
-            <% end  %>
+        <%= link_to "danger", notify_path(notify.id), class: "btn btn-small btn-danger" ,method: :delete, confirm: "Are you sure?"  %>
 
-          </div>
-        </td>
-      </tr>
-    <%  end %>
-  </tbody>
-</table>
+        <%= link_to notify_notifies_path(notify.id), data: { disable_with: "loading.." }, class: "btn btn-small btn-warning",  remote: true, method: :post do %>
+          notify
+        <% end  %>
+      </div>
+    </td>
+  </tr>
+<%  end %>

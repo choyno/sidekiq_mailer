@@ -1,18 +1,31 @@
 
-
 <div class="menu_holder">
   <div class="span5 reseter">
     <h1>Notifies List</h1>
   </div>
   <div class="pull-right ">
-    <%= link_to "Notify Person", "#modal", class: "btn btn-large btn-primary", remote: true, role: "button", :"data-toggle"=>"modal" %>
+    <%= link_to "Notify Person", new_notify_path, class: "btn btn-large btn-primary" %>
   </div>
 </div>
 
-<%= render "list" %>
-
-
-<%= render "modal" %>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>NAME</th>
+      <th>EMAIL</th>
+      <th>MESSAGE</th>
+      <th>
+        <div class="text-center">
+          OPTION
+        </div>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render "list" %>
+  </tbody>
+</table>
 
 
 

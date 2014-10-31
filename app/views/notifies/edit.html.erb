@@ -1,0 +1,19 @@
+
+
+<div class="menu_holder">
+  <div class="span5 reseter">
+    <h1>Edit Notify Person</h1>
+  </div>
+  <div class="pull-right ">
+    <%= link_to "Back", notifies_path, class: "btn btn-large btn-warning" %>
+  </div>
+</div>
+
+
+<%= simple_form_for @notify, method: :put do |f| %>
+  <%= render "form", f: f %>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <%= f.submit "Save to Notify" , class: "btn btn-primary" %>
+  </div>
+<% end %>
