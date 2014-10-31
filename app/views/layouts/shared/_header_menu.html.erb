@@ -1,0 +1,22 @@
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar" type="button">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "NOtifier", root_path,  class: "brand"%>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li class="">
+            <%= link_to "Dashboard", root_path %>
+          </li>
+          <li class="">
+            <%= link_to "Notifier List", notifies_path %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
