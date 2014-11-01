@@ -13,6 +13,7 @@ gem "twitter-bootstrap-rails"
 gem 'simple_form'
 
 gem 'sidekiq'
+gem 'sinatra', '>= 1.3.0', :require => nil
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -35,10 +36,15 @@ gem 'jquery-rails'
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
+gem 'pg'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+gem 'capistrano'
+gem 'capistrano-rvm'
+gem 'capistrano-bundler'
+gem 'capistrano-rails'
+gem 'capistrano3-unicorn'
 
 # To use debugger
 # gem 'debugger'
