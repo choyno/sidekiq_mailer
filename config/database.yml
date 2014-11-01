@@ -7,5 +7,5 @@ production:
   adapter:  postgresql
   database: sidekiq_mailer_production
   username: mailer
-  password: password
+  password: 
 
