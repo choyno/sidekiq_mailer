@@ -10,5 +10,5 @@ production:
   pool: 5
   database: sidekiq_mailer_production
   host: ""
-  username: mailer
+  username: postgresql
   password: password
