@@ -6,7 +6,9 @@
 
 production:
   adapter:  postgresql
+  encoding: unicode
+  pool: 5
   database: sidekiq_mailer_production
   host: ""
   username: mailer
-  password:
+  password: password
