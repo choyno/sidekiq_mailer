@@ -4,17 +4,18 @@
     <h1>Notifies List</h1>
   </div>
   <div class="pull-right ">
-    <%= link_to "Notify Person", new_notify_path, class: "btn btn-large btn-primary" %>
+    <%= link_to "Notify Person", "#form_modal", class: "btn btn-large btn-primary", :'data-toggle' => "modal", role: "button" %>
   </div>
 </div>
 
-<table class="table table-striped">
+<table class="table table-striped notify_table">
   <thead>
     <tr>
       <th>#</th>
       <th>NAME</th>
       <th>EMAIL</th>
       <th>MESSAGE</th>
+      <th>Status</th>
       <th>
         <div class="text-center">
           OPTION
@@ -27,5 +28,5 @@
   </tbody>
 </table>
 
-
+<%= render "modal" %>
 

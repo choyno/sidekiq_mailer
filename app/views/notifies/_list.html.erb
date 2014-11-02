@@ -1,20 +1,14 @@
-
 <% @notifies.each do |notify| %>
-  <tr>
-    <td><%=  notify.id %></td>
-    <td><%=  notify.name %></td>
-    <td><%=  notify.email %></td>
-    <td><%=  notify.message %></td>
+  <tr id="tr_<%= notify.id %>">
+    <td id="notify_id"><%=  notify.id %></td>
+    <td id="notify_name"><%=  notify.name %></td>
+    <td id="notify_email"><%=  notify.email %></td>
+    <td id="notify_message"><%= truncate notify.message, :length => 100  %></td>
+    <td id="<%= notify.id %> notify_status" ><%=  notify.status %></td>
     <td >
       <div class="text-center">
-        <%= link_to "edit", edit_notify_path(notify.id), class: "btn btn-small btn-info"  %>
-
-        <%= link_to "#", class: "btn btn-small btn-success"  do %>
-          show
-        <% end  %>
-
-        <%= link_to "danger", notify_path(notify.id), class: "btn btn-small btn-danger" ,method: :delete, confirm: "Are you sure?"  %>
-
+        <%= link_to "edit", edit_notify_path(notify.id), class: "btn btn-small btn-info", :"data-toggle" => "modal"  %>
+        <%#= link_to "danger", notify_path(notify.id), class: "btn btn-small btn-danger" ,method: :delete, confirm: "Are you sure?"  %>
         <%= link_to notify_notifies_path(notify.id), data: { disable_with: "loading.." }, class: "btn btn-small btn-warning",  remote: true, method: :post do %>
           notify
         <% end  %>

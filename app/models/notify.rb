@@ -5,4 +5,8 @@ class Notify < ActiveRecord::Base
     self.where(active: true)
   end
 
+  def status
+     self.active ? "active" : "inactive"
+  end
+
 end

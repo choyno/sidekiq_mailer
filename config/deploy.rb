@@ -25,7 +25,19 @@ set :scm, :git
 # set :log_level, :debug
 
 # Default value for :pty is false
-# set :pty, true
+set :pty, true
+set :ssh_options, { :forward_agent => true }
+
+set :log_level, :info
+
+set :linked_files, %w{config/database.yml config/database.yml}
+set :linked_dirs, %w{bin log tmp vendor/bundle public/system}
+
+SSHKit.config.command_map[:rake]  = "bundle exec rake"
+SSHKit.config.command_map[:rails] = "bundle exec rails"
+
+
+
 
 # Default value for :linked_files is []
 #set :linked_files, %w{config/database.yml}
@@ -57,4 +69,36 @@ namespace :deploy do
     end
   end
 
+
+
+  # namespace :assets do
+
+  #   Rake::Task['deploy:assets:precompile'].clear_actions
+
+  #   desc 'Precompile assets locally and upload to servers'
+  #   task :precompile do
+  #     on roles(fetch(:assets_roles)) do
+  #       run_locally do
+  #         with rails_env: fetch(:rails_env) do
+  #           execute 'bundle exec rake assets:precompile'
+  #         end
+  #       end
+
+  #       within release_path do
+  #         with rails_env: fetch(:rails_env) do
+  #           upload!('./public/assets/', "#{shared_path}/public/", recursive: true)
+  #         end
+  #       end
+
+  #       run_locally { execute 'rm -rf public/assets' }
+  #     end
+  #   end
+
+  # end
+
 end
+
+
+
+
+
