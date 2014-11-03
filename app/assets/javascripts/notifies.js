@@ -17,7 +17,7 @@ $(document).ready(function(){
     }
   });
 
-  $(".notify_edit").on('click', function(e){
+  $(".notify_table").delegate('.notify_edit', 'click', function(e){
     e.preventDefault();
     var notify_id = $(this).closest('tr').attr("id");
     $(".notify").attr("method", "put");
