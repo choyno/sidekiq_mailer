@@ -20,7 +20,9 @@ test:
   password: password
 
 production:
-  adapter: postgres
+  adapter: postgresql
+  encoding: unicode
   database: sidekiq_mailer_production
+  pool: 5
   username: mailer
-  password: 
+  password: password
