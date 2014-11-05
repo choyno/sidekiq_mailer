@@ -76,7 +76,7 @@ var notify = {
         row += "<td id='"+ data.id +"_notify_status'>" + helper.check_status(data.active) +"</td><td>";
         row += "<div class='text-center'>";
         row += "<a href='#form_modal' class='btn btn-small btn-info notify_edit' data-toggle='modal'>edit</a>";
-        row += "<a href='/notifies/notify/"+ data.id + "' class='btn btn-small btn-warning' style='margin-left:4px;'>notify</a>";
+        row += "<a href='/notifies/notify/"+ data.id + "' data-method='post' data-disable-with='loading..'  data-remote='true' class='btn btn-small btn-warning' style='margin-left:4px;'>notify</a>";
         row += "</div></td>";
         row += "</tr>";
 

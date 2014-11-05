@@ -9,7 +9,7 @@
       <div class="text-center">
         <%= link_to "edit", "#form_modal ", class: "btn btn-small btn-info notify_edit", :"data-toggle" => "modal"  %>
         <%#= link_to "danger", notify_path(notify.id), class: "btn btn-small btn-danger" ,method: :delete, confirm: "Are you sure?"  %>
-        <%= link_to notify_notifies_path(notify.id), data: { disable_with: "loading.." }, class: "btn btn-small btn-warning",  remote: true, method: :post do %>
+        <%= link_to notify_notifies_path(notify.id), data: { disable_with: "loading.." }, class: "btn btn-small btn-warning notify", remote: true, method: :post do %>
           notify
         <% end  %>
       </div>

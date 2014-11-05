@@ -43,8 +43,11 @@ class NotifiesController < ApplicationController
   def notify
     Notifications.delay.notify(@notify)
 
-     flash[:notice] = "Successfully Notify"
-     redirect_to notifies_path
+    respond_to do |format|
+      format.js
+      format.json { render json: @notify }
+    end
+
   end
 
   private
